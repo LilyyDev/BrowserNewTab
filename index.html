@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>~/startpage</title>
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <style>
+            @font-face {
+                font-family: 'Hack';
+                src: URL('font.ttf') format('truetype');
+            }
+            body {
+                background-color: #1e1d2f;
+                font-family: Hack;
+            }
+
+            .container {
+                text-align: center;
+                position: absolute;
+                top: 50%;
+                left: 35%;
+                transform: translate(-20%, -50%);
+            }
+
+            h1 {
+                color: #e5c2dd;
+                margin-top: 48px;
+                margin-bottom: 24px;
+            }
+            h2 {
+                color: #93dddc;
+                margin-bottom: 8px;
+            }
+            h3 {
+                color: #444555;
+                margin: 0px;
+                margin-bottom: 24px;
+            }
+            h4 {
+                color: white;
+                padding-left: 12px;
+                margin: 0px;
+                margin-bottom: 4px;
+            }
+            a{
+                text-decoration-color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div style="float: left; margin: 24px;">
+                <img src="pic.png" style="margin-right: 84px; margin-top: 8px; box-shadow: 0px 0px 40px 5px #130f20;">
+            </div>
+            <div style="float: right;">
+                <div>
+                    <h1>Welcome back!</h1>
+                    <h3 id="status">date here</h3>
+                </div>
+                <div style="float: left; margin-right: 24px; text-align: left;">
+                    <h2>~/general </h2>
+                    <a href="https://youtube.com"><h4>YouTube</h4></a>
+                    <a href="https://reddit.com"><h4>Reddit</h4></a>
+                    <a href="https://twitter.com"><h4>Twitter</h4></a>
+                    <a href="https://mail.zoho.eu/zm/#mail/folder/inbox"><h4>Mail</h4></a>
+                    <h2>~/gaming </h2>
+                    <a href="https://store.steampowered.com/"><h4>Steam</h4></a>
+                    <a href="https://www.protondb.com/"><h4>ProtonDB</h4></a>
+                    <a href="https://app.destinyitemmanager.com/4611686018472515395/d2/inventory"><h4>DIM</h4></a>
+                    <a href="https://twitch.tv"><h4>Twitch</h4></a>
+                </div>
+                <div style="float: right; margin-left: 24px; text-align: left;">
+                    <h2>~/dev </h2>
+                    <a href="https://github.com/"><h4>GitHub</h4></a>
+                    <a href="https://replit.com/"><h4>Replit</h4></a>
+                    <a href="https://www.nerdfonts.com/cheat-sheet"><h4>Nerd Fonts</h4></a>
+                    <a href="https://aur.archlinux.org/"><h4>AUR</h4></a>
+                    <h2>~/linux </h2>
+                    <a href="https://www.gnome-look.org/browse/"><h4>GNOME Themes</h4></a>
+                    <a href="https://extensions.gnome.org/"><h4>GNOME Extensions</h4></a>
+                    <a href="https://store.kde.org/browse?cat=104&ord=latest"><h4>KDE Themes</h4></a>
+                    <a href="https://wiki.archlinux.org/"><h4>Arch Wiki</h4></a>
+                </div>
+            </div>
+        </div>
+        <script>
+            function set(){
+                var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+
+today = dd + '/' + mm + '/' + yyyy;
+                var dateObj = new Date()
+                var day = dateObj.toLocaleString("default", { weekday: "long" })
+                var time = dateObj.getHours() + ":" + dateObj.getMinutes() + ":" + dateObj.getSeconds();
+                var format = day + ", " + time + " | " + today
+                document.getElementById("status").innerHTML = format;
+            }
+            setInterval(() => {set()}, 200)
+        </script>
+    </body>
+</html>
